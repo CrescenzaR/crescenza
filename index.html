@@ -1,282 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crescenza | Natural Hair Care</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #fafafa;
-      color: #2e2e2e;
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #2f241d, #6f4e37);
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      margin-top: 15px;
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 45px;
-      color: #6f4e37;
-      font-size: 2.2rem;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      padding: 30px;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-    }
-    .card h3 {
-      margin-top: 0;
-      color: #2f241d;
-      font-size: 1.4rem;
-    }
-    .price {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-top: 18px;
-      color: #6f4e37;
-    }
-    .benefits ul {
-      list-style: none;
-      padding: 0;
-    }
-    .benefits li {
-      margin: 10px 0;
-    }
-    .highlight {
-      background: #f3ede7;
-      border-left: 6px solid #6f4e37;
-    }
-    .guide {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-      padding: 35px;
-    }
-    .guide h3 {
-      color: #6f4e37;
-    }
-    .contact {
-      background: #2f241d;
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-    }
-    .contact a {
-      color: #f5d7b2;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .whatsapp {
-      display: inline-block;
-      margin-top: 25px;
-      background: #25D366;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-    footer {
-      background: #1b1b1b;
-      color: #aaa;
-      text-align: center;
-      padding: 18px;
-      font-size: 0.9rem;
-    }
-    .floating-whatsapp {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #25D366;
-      color: white;
-      padding: 16px 22px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-      z-index: 999;
-    }
-    .ideal {
-      background:#f9f5f1;
-      border-radius:16px;
-      padding:40px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.07);
-      text-align:center;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescenza | Natural Hair Care Aruba</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .coffee-overlay { background: rgba(75, 54, 33, 0.6); }
+        .product-card:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+    </style>
 </head>
-<body>
+<body class="bg-[#FDFBF9]">
 
-<header>
-  <h1>CRESCENZA</h1>
-  <p id="hero-text">Natural hair care designed to stimulate growth, strengthen the roots and restore shine from root to tip.</p>
-  <div style="margin-top:20px;">
-    <button onclick="setLang('en')">EN</button>
-    <button onclick="setLang('es')">ES</button>
-  </div>
-</header>
+    <nav class="p-6 flex justify-between items-center bg-white shadow-sm sticky top-0 z-50">
+        <div class="text-2xl font-bold tracking-tighter text-[#4B3621]">CRESCENZA</div>
+        <a href="https://wa.me/2975614022" class="bg-[#25D366] text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md">Pedir ahora</a>
+    </nav>
 
-<section>
-  <h2>Our Products</h2>
-  <div class="products">
-    <div class="card">
-      <h3>Crescenza Kit</h3>
-      <p>Complete routine for stronger, healthier hair.</p>
-      <div class="price">80 florins</div>
-      <a class="whatsapp" href="https://wa.me/2975614022?text=Hola%20quiero%20comprar%20el%20Kit%20Crescenza" target="_blank">Buy via WhatsApp</a>
-    </div>
-    <div class="card">
-      <h3>Hair Growth Drops</h3>
-      <p>Stimulates circulation and promotes healthy growth.</p>
-      <div class="price">20 florins</div>
-      <a class="whatsapp" href="https://wa.me/2975614022?text=Hola%20quiero%20comprar%20las%20Gotas%20Crescenza" target="_blank">Buy via WhatsApp</a>
-    </div>
-    <div class="card">
-      <h3>Treatment</h3>
-      <p>Deep hydration and intensive repair.</p>
-      <div class="price">35 florins</div>
-      <a class="whatsapp" href="https://wa.me/2975614022?text=Hola%20quiero%20comprar%20el%20Tratamiento%20Crescenza" target="_blank">Buy via WhatsApp</a>
-    </div>
-    <div class="card">
-      <h3>Shampoo</h3>
-      <p>Gentle cleansing, sulfate and salt free.</p>
-      <div class="price">30 florins</div>
-      <a class="whatsapp" href="https://wa.me/2975614022?text=Hola%20quiero%20comprar%20el%20Shampoo%20Crescenza" target="_blank">Buy via WhatsApp</a>
-    </div>
-  </div>
-</section>
+    <header class="relative h-[80vh] flex items-center justify-center text-center text-white bg-cover bg-center" style="background-image: url('tu-foto-principal.jpg'); background-color: #4B3621;">
+        <div class="absolute inset-0 coffee-overlay"></div>
+        <div class="relative z-10 px-4">
+            <h2 class="text-5xl md:text-7xl mb-4">Cuidado Capilar Natural</h2>
+            <p class="text-xl mb-8 font-light">Fórmulas veganas a base de café para un cabello fuerte y brillante.</p>
+            <a href="#productos" class="bg-[#A67B5B] hover:bg-[#8B6243] text-white px-10 py-4 rounded-full font-bold transition">Ver el Kit</a>
+        </div>
+    </header>
 
-<section id="benefits">
-  <h2 id="benefits-title">Why Crescenza?</h2>
-  <p style="text-align:center; max-width:800px; margin:auto;">Crescenza combines natural ingredients with professional formulas to help restore hair health, stimulate growth and improve shine and strength from the root.</p>
-</section>
+    <section id="productos" class="py-20 px-6 max-w-7xl mx-auto">
+        <h3 class="text-4xl text-center mb-16 text-[#4B3621]">Nuestra Colección</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-xl border border-stone-100">
+                <img src="kit.jpg" alt="Kit Crescenza" class="w-full h-80 object-cover bg-stone-200">
+                <div class="p-8 text-center">
+                    <h4 class="text-2xl font-bold mb-2">Kit Crescenza</h4>
+                    <p class="text-stone-500 mb-6 text-sm">Shampoo + Tratamiento + Gotas</p>
+                    <div class="text-3xl font-light text-[#A67B5B] mb-6">80 Florines</div>
+                    <a href="https://wa.me/2975614022?text=Hola!%20Deseo%20el%20Kit%20Crescenza" class="inline-block w-full py-3 bg-[#4B3621] text-white rounded-xl font-medium">Lo quiero</a>
+                </div>
+            </div>
 
-<section>
-  <h2>Ideal for All Hair Types</h2>
-  <div class="ideal">
-    <p>✔ Natural, salt-free and sulfate-free formula</p>
-    <p>✔ Safe for natural, dyed or keratin-treated hair</p>
-    <p>✔ Suitable for curly, straight, wavy or damaged hair</p>
-    <p>✔ Designed for men and women</p>
-  </div>
-</section>
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-xl border border-stone-100">
+                <img src="shampoo.jpg" alt="Shampoo Crescenza" class="w-full h-80 object-cover bg-stone-200">
+                <div class="p-8 text-center">
+                    <h4 class="text-2xl font-bold mb-2">Shampoo Profesional</h4>
+                    [span_0](start_span)<p class="text-stone-500 mb-6 text-sm">Café & Canela (16.9 oz)[span_0](end_span)</p>
+                    <div class="text-3xl font-light text-[#A67B5B] mb-6">30 Florines</div>
+                    <a href="https://wa.me/2975614022" class="inline-block w-full py-3 border-2 border-[#4B3621] text-[#4B3621] rounded-xl font-medium">Añadir</a>
+                </div>
+            </div>
 
-<section>
-  <h2>Product Benefits</h2>
-  <div class="products benefits">
-    <div class="card">
-      <h3>Shampoo</h3>
-      <ul>
-        <li>✔ Stimulates hair growth</li>
-        <li>✔ Deep hydration</li>
-        <li>✔ Antioxidant protection</li>
-        <li>✔ Sulfate & salt free</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Treatment</h3>
-      <ul>
-        <li>✔ Scalp exfoliation</li>
-        <li>✔ Repairs damaged hair</li>
-        <li>✔ Reduces frizz</li>
-        <li>✔ Mirror-like shine</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Hair Drops</h3>
-      <ul>
-        <li>✔ Strengthens the roots</li>
-        <li>✔ Retains hair length</li>
-        <li>✔ Adds natural shine</li>
-        <li>✔ No rinse required</li>
-      </ul>
-    </div>
-  </div>
-</section>
+            <div class="product-card bg-white rounded-3xl overflow-hidden shadow-xl border border-stone-100">
+                <img src="gotas.jpg" alt="Gotas Capilares" class="w-full h-80 object-cover bg-stone-200">
+                <div class="p-8 text-center">
+                    <h4 class="text-2xl font-bold mb-2">Gotas Capilares</h4>
+                    [span_1](start_span)[span_2](start_span)<p class="text-stone-500 mb-6 text-sm">Con Romero y Chebe[span_1](end_span)[span_2](end_span)</p>
+                    <div class="text-3xl font-light text-[#A67B5B] mb-6">20 Florines</div>
+                    <a href="https://wa.me/2975614022" class="inline-block w-full py-3 border-2 border-[#4B3621] text-[#4B3621] rounded-xl font-medium">Añadir</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>How to Use</h2>
-  <div class="guide">
-    <h3>Step 1 – Shampoo</h3>
-    <p>Apply to wet hair, massage the scalp gently and leave on for 5 minutes. Rinse thoroughly.</p>
+    <section class="bg-[#4B3621] text-white py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-4xl mb-12 italic">Fórmula Ética y Natural</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-4xl mb-2">🌿</div>
+                    [span_3](start_span)[span_4](start_span)<p class="text-xs uppercase tracking-widest">100% Vegano[span_3](end_span)[span_4](end_span)</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-2">🚫</div>
+                    [span_5](start_span)[span_6](start_span)<p class="text-xs uppercase tracking-widest">Sin Sulfatos[span_5](end_span)[span_6](end_span)</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-2">☕</div>
+                    [span_7](start_span)[span_8](start_span)<p class="text-xs uppercase tracking-widest">Café Real[span_7](end_span)[span_8](end_span)</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-2">🇦🇼</div>
+                    <p class="text-xs uppercase tracking-widest">Local Aruba</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h3>Step 2 – Treatment</h3>
-    <p>Apply from roots to ends, massage and leave on for 15–20 minutes. Rinse well.</p>
+    <footer class="py-16 text-center text-[#4B3621]">
+        <h3 class="text-2xl mb-4">¿Dudas? Contáctanos</h3>
+        <p class="mb-2">📍 Aruba</p>
+        <p class="mb-2">📞 5614022</p>
+        <p class="mb-8 italic">crescenza.aruba@gmail.com</p>
+        <div class="flex justify-center space-x-6">
+            <a href="https://instagram.com/crescenzakit" class="text-sm font-bold border-b-2 border-[#4B3621]">Instagram</a>
+            <a href="https://wa.me/2975614022" class="text-sm font-bold border-b-2 border-[#4B3621]">WhatsApp</a>
+        </div>
+    </footer>
 
-    <h3>Step 3 – Hair Drops</h3>
-    <p>Apply directly to the scalp, massage for 2–3 minutes. Do not rinse.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Professional Size</h2>
-  <div class="products">
-    <div class="card highlight">
-      <h3>1 Gallon Professional Kit</h3>
-      <p>Includes 1 gallon of shampoo and treatment.</p>
-      <div class="price">195 florins</div>
-      <a class="whatsapp" href="https://wa.me/2975614022?text=Hola%20quiero%20comprar%20el%20Kit%20Profesional%20de%201%20Galon%20Crescenza" target="_blank">Buy via WhatsApp</a>
-    </div>
-  </div>
-</section>
-
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>📞 Aruba: <strong>5614022</strong></p>
-  <p>📧 <a href="mailto:crescenza.aruba@gmail.com">crescenza.aruba@gmail.com</a></p>
-  <p>📸 <a href="https://instagram.com/crescenzakit" target="_blank">@crescenzakit</a></p>
-  <a class="whatsapp" href="https://wa.me/2975614022" target="_blank">Chat on WhatsApp</a>
-</section>
-
-<footer>
-  © 2026 Crescenza · Premium Natural Hair Care
-</footer>
-
-<a class="floating-whatsapp" href="https://wa.me/2975614022?text=Hola%20👋%20Gracias%20por%20contactar%20a%20Crescenza.%20Quiero%20más%20información%20sobre%20sus%20productos" target="_blank">💬 WhatsApp</a>
-
-<script>
-function setLang(lang){
-  if(lang==='es'){
-    document.getElementById('hero-text').innerText='Cuidado capilar natural diseñado para estimular el crecimiento, fortalecer la raíz y devolver el brillo de raíz a puntas.';
-    document.getElementById('benefits-title').innerText='¿Por qué Crescenza?';
-  } else {
-    document.getElementById('hero-text').innerText='Natural hair care designed to stimulate growth, strengthen the roots and restore shine from root to tip.';
-    document.getElementById('benefits-title').innerText='Why Crescenza?';
-  }
-}
-</script>
 </body>
 </html>
