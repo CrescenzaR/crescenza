@@ -3,101 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crescenza | Tienda Oficial</title>
+    <title>Crescenza | Cuidado Capilar Profesional</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #fdfaf7; color: #3d2b1f; }
-        .brand-font { letter-spacing: 0.2em; text-transform: uppercase; }
-        .img-container { width: 100%; aspect-ratio: 1/1; overflow: hidden; border-radius: 1.5rem; background: #eee; }
+        body { font-family: 'Poppins', sans-serif; background-color: #fdfaf7; }
+        h1, h2, .brand-font { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.2em; }
+        h3, h4 { font-family: 'Playfair Display', serif; }
+        .text-coffee { color: #3d2b1f; }
+        .bg-coffee { background-color: #3d2b1f; }
+        #cart-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 200; align-items: center; justify-content: center; }
+        .img-container { width: 100%; aspect-ratio: 1080 / 1350; overflow: hidden; border-radius: 1rem; }
         .img-container img { width: 100%; height: 100%; object-fit: cover; }
-        #cart-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 100; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25d366; border-radius: 50%; z-index: 100; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/2975614022" class="whatsapp-float"><svg width="30" height="30" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.316 1.592 5.43.001 9.85-4.417 9.852-9.853.001-2.633-1.027-5.109-2.9-6.982-1.873-1.873-4.35-2.903-6.977-2.904-5.432 0-9.853 4.417-9.855 9.854-.001 2.1.56 3.456 1.571 5.187l-1.019 3.714 3.812-1.008zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479-1.04 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+<a href="https://wa.me/2975614022" class="whatsapp-float" target="_blank">
+    <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+</a>
 
-    <nav class="p-6 flex justify-between items-center bg-white sticky top-0 shadow-sm z-50">
-        <h1 class="text-2xl font-bold brand-font">CRESCENZA</h1>
-        <button onclick="openCart()" class="bg-[#3d2b1f] text-white px-5 py-2 rounded-full font-bold">
-            Bolsa (<span id="count">0</span>)
+<nav class="p-4 flex justify-between items-center bg-white sticky top-0 z-50 shadow-sm">
+    <img src="./Logo.jpg" alt="Logo" class="h-12 md:h-16">
+    <button onclick="toggleCart()" class="bg-coffee text-white px-6 py-2 rounded-full">
+        🛒 <span id="cart-count">0</span>
+    </button>
+</nav>
+
+<section class="py-16 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="bg-white p-2 rounded-3xl text-center">
+        <div class="img-container"><img src="./Kit.jpg"></div>
+        <div class="p-6">
+            <h3 class="font-bold uppercase text-sm">Kit Completo</h3>
+            <p class="text-xl mb-4">80 Fl.</p>
+            <button onclick="addToCart('Kit Completo',80)" class="w-full bg-coffee text-white py-3 rounded-xl">Agregar</button>
+        </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-3xl text-center">
+        <div class="img-container"><img src="./Shampoo.jpg"></div>
+        <div class="p-6">
+            <h3 class="font-bold uppercase text-sm">Shampoo</h3>
+            <p class="text-xl mb-4">30 Fl.</p>
+            <button onclick="addToCart('Shampoo',30)" class="w-full bg-stone-100 py-3 rounded-xl">Agregar</button>
+        </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-3xl text-center">
+        <div class="img-container"><img src="./Tratamiento.jpg"></div>
+        <div class="p-6">
+            <h3 class="font-bold uppercase text-sm">Tratamiento</h3>
+            <p class="text-xl mb-4">35 Fl.</p>
+            <button onclick="addToCart('Tratamiento',35)" class="w-full bg-stone-100 py-3 rounded-xl">Agregar</button>
+        </div>
+    </div>
+
+    <div class="bg-white p-2 rounded-3xl text-center">
+        <div class="img-container"><img src="./Gotero.jpg"></div>
+        <div class="p-6">
+            <h3 class="font-bold uppercase text-sm">Gotas</h3>
+            <p class="text-xl mb-4">20 Fl.</p>
+            <button onclick="addToCart('Gotas',20)" class="w-full bg-stone-100 py-3 rounded-xl">Agregar</button>
+        </div>
+    </div>
+</section>
+
+<div id="cart-modal">
+    <div class="bg-white p-10 rounded-2xl max-w-md w-full text-center">
+        <h3 class="text-2xl font-bold mb-6">Tu Bolsa</h3>
+        <input id="client-name" placeholder="Tu nombre" class="w-full p-3 border rounded mb-4">
+        <div id="cart-items" class="mb-4 text-left"></div>
+        <div class="flex justify-between font-bold text-xl mb-6">
+            <span>Total:</span>
+            <span id="cart-total">0 Fl.</span>
+        </div>
+        <button onclick="sendToWhatsApp()" class="w-full bg-[#25d366] text-white py-4 rounded-xl">
+            Confirmar en WhatsApp 💬
         </button>
-    </nav>
-
-    <div class="p-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white p-4 rounded-3xl shadow-sm text-center">
-            <div class="img-container"><img src="Kit.jpg" onerror="this.src='https://via.placeholder.com/300'"></div>
-            <h3 class="mt-4 font-bold">Kit Completo</h3>
-            <p class="text-[#a67b5b] font-bold">80 Fl.</p>
-            <button onclick="add('Kit Completo', 80)" class="mt-3 w-full bg-[#3d2b1f] text-white py-2 rounded-xl">Agregar</button>
-        </div>
-        <div class="bg-white p-4 rounded-3xl shadow-sm text-center">
-            <div class="img-container"><img src="Shampoo.jpg" onerror="this.src='https://via.placeholder.com/300'"></div>
-            <h3 class="mt-4 font-bold">Shampoo (500ml)</h3>
-            <p class="text-[#a67b5b] font-bold">30 Fl.</p>
-            <button onclick="add('Shampoo', 30)" class="mt-3 w-full bg-[#eee] py-2 rounded-xl">Agregar</button>
-        </div>
-        <div class="bg-white p-4 rounded-3xl shadow-sm text-center">
-            <div class="img-container"><img src="Tratamiento.jpg" onerror="this.src='https://via.placeholder.com/300'"></div>
-            <h3 class="mt-4 font-bold">Tratamiento</h3>
-            <p class="text-[#a67b5b] font-bold">35 Fl.</p>
-            <button onclick="add('Tratamiento', 35)" class="mt-3 w-full bg-[#eee] py-2 rounded-xl">Agregar</button>
-        </div>
-        <div class="bg-white p-4 rounded-3xl shadow-sm text-center">
-            <div class="img-container"><img src="Gotero.jpg" onerror="this.src='https://via.placeholder.com/300'"></div>
-            <h3 class="mt-4 font-bold">Gotas Capilares</h3>
-            <p class="text-[#a67b5b] font-bold">20 Fl.</p>
-            <button onclick="add('Gotas', 20)" class="mt-3 w-full bg-[#eee] py-2 rounded-xl">Agregar</button>
-        </div>
+        <button onclick="toggleCart()" class="mt-4 text-xs">Cerrar</button>
     </div>
+</div>
 
-    <div id="cart-modal">
-        <div class="bg-white p-8 rounded-[2rem] max-w-md w-full shadow-2xl">
-            <h2 class="text-2xl font-bold mb-6 text-center">Tu Pedido</h2>
-            <input type="text" id="nombre" placeholder="Tu nombre" class="w-full p-3 border rounded-xl mb-4 outline-none">
-            <div id="lista" class="space-y-2 mb-6 max-h-40 overflow-y-auto"></div>
-            <div class="flex justify-between font-bold text-xl mb-6">
-                <span>Total:</span>
-                <span id="total">0 Fl.</span>
-            </div>
-            <button onclick="enviar()" class="w-full bg-[#25d366] text-white py-4 rounded-2xl font-bold text-lg">Pedir por WhatsApp</button>
-            <button onclick="closeCart()" class="w-full mt-4 text-gray-400 text-sm">Cerrar</button>
-        </div>
-    </div>
+<script>
+    let cart = [];
 
-    <script>
-        let car = [];
-        function add(n, p) { 
-            car.push({n, p}); 
-            document.getElementById('count').innerText = car.length;
-            alert("✅ Añadido: " + n);
-        }
-        function openCart() {
-            const modal = document.getElementById('cart-modal');
-            const lista = document.getElementById('lista');
-            const total = document.getElementById('total');
-            modal.style.display = 'flex';
-            lista.innerHTML = '';
-            let t = 0;
-            car.forEach(i => {
-                t += i.p;
-                lista.innerHTML += <div class="flex justify-between border-b pb-1"><span>${i.n}</span><b>${i.p} Fl.</b></div>;
+    function addToCart(n, p) {
+        cart.push({ n, p });
+        updateCart();
+        alert("✨ " + n + " añadido");
+    }
+
+    function toggleCart() {
+        const m = document.getElementById("cart-modal");
+        m.style.display = m.style.display === "flex" ? "none" : "flex";
+    }
+
+    function updateCart() {
+        const items = document.getElementById("cart-items");
+        const totalEl = document.getElementById("cart-total");
+        const countEl = document.getElementById("cart-count");
+
+        let total = 0;
+        items.innerHTML = "";
+
+        if (cart.length === 0) {
+            items.innerHTML = "<p>Vacía</p>";
+        } else {
+            cart.forEach(i => {
+                total += i.p;
+                items.innerHTML += `
+                    <div class="flex justify-between border-b py-1">
+                        <span>${i.n}</span>
+                        <span>${i.p} Fl.</span>
+                    </div>
+                `;
             });
-            total.innerText = t + " Fl.";
         }
-        function closeCart() { document.getElementById('cart-modal').style.display = 'none'; }
-        function enviar() {
-            const nom = document.getElementById('nombre').value;
-            if(!nom) return alert("Pon tu nombre");
-            if(car.length === 0) return alert("Carrito vacío");
-            let m = 🌿 *PEDIDO CRESCENZA*\n👤 *CLIENTE:* ${nom.toUpperCase()}\n\n;
-            let t = 0;
-            car.forEach(i => { m += • ${i.n}: ${i.p} Fl.\n; t += i.p; });
-            m += \n💰 *TOTAL: ${t} Fl.*;
-            window.location.href = https://wa.me/2975614022?text=${encodeURIComponent(m)};
-        }
-    </script>
+
+        totalEl.innerText = total + " Fl.";
+        countEl.innerText = cart.length;
+    }
+
+    function sendToWhatsApp() {
+        const name = document.getElementById("client-name").value.trim();
+        if (!name) return alert("Ingresa tu nombre");
+        if (cart.length === 0) return alert("Bolsa vacía");
+
+        let msg = `🌿 *PEDIDO CRESCENZA*\n👤 *CLIENTE:* ${name.toUpperCase()}\n\n`;
+        let total = 0;
+
+        cart.forEach(i => {
+            msg += `• ${i.n}: ${i.p} Fl.\n`;
+            total += i.p;
+        });
+
+        msg += `\n💰 *TOTAL: ${total} Fl.*`;
+
+        window.location.href = `https://wa.me/2975614022?text=${encodeURIComponent(msg)}`;
+    }
+</script>
+
 </body>
 </html>
+
