@@ -8,7 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #fdfaf7; }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        /* Se unifica Crescenza y títulos secundarios a Poppins */
+        h1, h2, .brand-font { font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 0.2em; }
+        h3, h4 { font-family: 'Playfair Display', serif; }
+        
         .text-coffee { color: #3d2b1f; }
         .bg-coffee { background-color: #3d2b1f; }
         #cart-modal { display: none; }
@@ -31,7 +34,7 @@
     </nav>
 
     <header class="py-16 px-6 text-center bg-white border-b border-stone-50">
-        <h2 class="text-6xl md:text-8xl font-bold text-coffee mb-6 tracking-tighter italic">CRESCENZA</h2>
+        <h2 class="text-6xl md:text-8xl font-bold text-coffee mb-6 tracking-tighter uppercase brand-font">CRESCENZA</h2>
         <p class="text-xl italic text-stone-400 mb-8 font-light uppercase tracking-widest text-sm">High Quality Hair Care</p>
         <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em] text-[#a67b5b]">
             <span>100% Vegano</span> • <span>Sin Sal</span> • <span>Sin Sulfatos</span>
@@ -118,7 +121,7 @@
 
     <div id="cart-modal" class="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 backdrop-blur-sm">
         <div class="bg-white rounded-[2rem] p-10 max-w-md w-full text-center shadow-2xl">
-            <h3 class="text-2xl font-bold mb-8 text-coffee italic">Tu Pedido</h3>
+            <h3 class="text-2xl font-bold mb-8 text-coffee italic text-center brand-font">Tu Pedido</h3>
             <input type="text" id="client-name" placeholder="Tu nombre" class="w-full p-4 border-2 border-stone-100 rounded-2xl mb-6 outline-none focus:border-coffee transition">
             <div id="cart-items" class="mb-8 space-y-4 text-sm italic text-stone-500"></div>
             <div class="flex justify-between text-2xl font-bold mb-10 text-coffee italic"><span>Total:</span><span id="cart-total">0 Fl.</span></div>
